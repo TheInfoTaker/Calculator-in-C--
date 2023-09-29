@@ -5,8 +5,8 @@
 
 using namespace std;
 
+// Function for performing addition
 int addition() {
-
     int a;
     int b;
     int sum;
@@ -21,11 +21,13 @@ int addition() {
 
     cout << "The sum of those numbers is " << sum << endl;
 
+    // Open the file for appending (ios::app)
     ofstream outfile("calculations.txt", ios::app);
     if (outfile.is_open()) {
-            outfile << a << " + " << b << " = " << sum << endl;
-            outfile.close();
-            cout << "Calculation saved" << endl;
+        // Save the calculation result to the file
+        outfile << a << " + " << b << " = " << sum << endl;
+        outfile.close();
+        cout << "Calculation saved" << endl;
     } else {
         cerr << "Cannot open file for saving." << endl;
     }
@@ -33,6 +35,7 @@ int addition() {
     return 0;
 }
 
+// Function for performing subtraction
 int subtraction() {
     int c;
     int d;
@@ -48,13 +51,13 @@ int subtraction() {
 
     cout << "The difference of those numbers is " << dif << endl;
 
-
-
+    // Open the file for appending (ios::app)
     ofstream outfile("calculations.txt", ios::app);
     if (outfile.is_open()) {
-            outfile << c << " - " << d << " = " << dif << endl;
-            outfile.close();
-            cout << "Calculation saved" << endl;
+        // Save the calculation result to the file
+        outfile << c << " - " << d << " = " << dif << endl;
+        outfile.close();
+        cout << "Calculation saved" << endl;
     } else {
         cerr << "Cannot open file for saving." << endl;
     }
@@ -62,14 +65,16 @@ int subtraction() {
     return 0;
 }
 
+// Function for loading calculation history from a file
 int loadCalculations() {
     string line;
     ifstream infile("calculations.txt");
 
     if (infile.is_open()) {
-        cout << "Calculations History:" <<endl;
+        cout << "Calculations History:" << endl;
+        // Read and display each line from the file
         while (getline(infile, line)) {
-            cout <<line << endl;
+            cout << line << endl;
         }
         infile.close();
     } else {
@@ -79,12 +84,12 @@ int loadCalculations() {
     return 0;
 }
 
-int main()
-{
+int main() {
     int choice;
 
+    //Displays a menue that repeats the options until the user selects quit
     while (true) {
-        cout << "Menue:" << endl;
+        cout << "Menu:" << endl;
         cout << "1. Addition" << endl;
         cout << "2. Subtraction" << endl;
         cout << "3. Load" << endl;
