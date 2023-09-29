@@ -11,7 +11,7 @@ The primary purpose of creating this software was to reinforce my knowledge of C
 **Software Demo Video**
 You can watch a demonstration of the software and a walkthrough of the code on YouTube by following the link below:
 
-[Youdtube](https: 
+[Youdtube](https: https://youtu.be/9r8j9YyqqNQ
 
 # Development Environment
 
